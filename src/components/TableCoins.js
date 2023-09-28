@@ -19,6 +19,7 @@ const TableCoins = ({coins, search }) => {
         <Table striped bordered hover>
             <thead>
                 <tr>
+                    <th>Star</th>
                     <th></th>
                     <th>Id</th>
                     <th>Symbol</th>
@@ -31,6 +32,8 @@ const TableCoins = ({coins, search }) => {
             <tbody>
                 {filteredCoins.map(coin => (
                 <tr key={coin.name}>
+                    <td className="">
+                    </td>
                     <td className=""> <img src={coin.image} width={"40px"} className="img-thumbnail"/></td>
                     <td className="text-uppercase">{coin.symbol}</td>
                     <td className="">{coin.id}</td>
@@ -49,5 +52,7 @@ const TableCoins = ({coins, search }) => {
     </>
     )
 };
+
+
 
 export default TableCoins;

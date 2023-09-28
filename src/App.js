@@ -1,7 +1,7 @@
-import {useEffect, useState, UseState} from 'react';
+import {useEffect, useState} from 'react';
 import './App.css';
 import TableCoins from './components/TableCoins';
-import axios from 'axios'
+//import axios from 'axios'
 
 function App() {
 
@@ -2906,10 +2906,10 @@ function App() {
     ]};
 
     setCoins(res.data);
-    console.log (res.data);
   }
 
   useEffect(()=>{
+    document.title = "Cryptocoin";
     getData()
   }, [])
   
