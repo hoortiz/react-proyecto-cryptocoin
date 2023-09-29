@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.star-checkbox {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.star-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.star-checkbox .star {
+  font-size: 24px;
+  color: rgb(255, 230, 230);
+}
+
+.star-checkbox.checked .star {
+  color: red;
+}

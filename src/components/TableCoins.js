@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
+import StarCheckbox from './StarCheckbox';
 import Table from 'react-bootstrap/Table';
+import Graphics from './Graphics';
+
 
 const TableCoins = ({coins, search }) => {
 
@@ -13,6 +16,7 @@ const TableCoins = ({coins, search }) => {
         coin.symbol.toLowerCase().includes(search.toLowerCase())
     );
 
+
     return (
 
     <>
@@ -20,9 +24,8 @@ const TableCoins = ({coins, search }) => {
             <thead>
                 <tr>
                     <th>Star</th>
-                    <th></th>
-                    <th>Id</th>
                     <th>Symbol</th>
+                    <th>Id</th>
                     <th>Name</th>
                     <th>Price</th>
                     <th>Current Price</th>
@@ -31,11 +34,13 @@ const TableCoins = ({coins, search }) => {
             </thead>
             <tbody>
                 {filteredCoins.map(coin => (
+
+
                 <tr key={coin.name}>
                     <td className="">
+                        <StarCheckbox />
                     </td>
-                    <td className=""> <img alt={coin.name} src={coin.image} width={"40px"} className="img-thumbnail"/></td>
-                    <td className="text-uppercase">{coin.symbol}</td>
+                    <td className="text-uppercase"><img alt={coin.name} src={coin.image} width={"40px"} className="img-thumbnail"/> {coin.symbol}</td>
                     <td className="">{coin.id}</td>
                     <td className="">{coin.name}</td>
                     <td>
@@ -45,6 +50,9 @@ const TableCoins = ({coins, search }) => {
                         {coin.price_change_percentage_24h}
                     </td>
                     <td className="">{coin.total_volume}</td>
+                    <td className=""><Graphics sparkline_in_7d={coin.sparkline_in_7d.price} /></td>
+                    
+                    
                 </tr>
             ))}
           </tbody>
@@ -56,3 +64,4 @@ const TableCoins = ({coins, search }) => {
 
 
 export default TableCoins;
+
