@@ -34,7 +34,7 @@ const TableCoins = ({coins, search }) => {
                 <tr key={coin.name}>
                     <td className="">
                     </td>
-                    <td className=""> <img src={coin.image} width={"40px"} className="img-thumbnail"/></td>
+                    <td className=""> <img alt={coin.name} src={coin.image} width={"40px"} className="img-thumbnail"/></td>
                     <td className="text-uppercase">{coin.symbol}</td>
                     <td className="">{coin.id}</td>
                     <td className="">{coin.name}</td>
